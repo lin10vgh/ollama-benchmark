@@ -1,0 +1,19 @@
+#!/bin/bash
+
+apt update && apt upgrade -y
+
+apt install -y vim curl
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+source ~/.bashrc
+
+uv python install
+
+mkdir benchmark
+
+cd benchmark
+
+uv init
+
+uv add pydantic ollama
